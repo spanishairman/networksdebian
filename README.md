@@ -32,7 +32,7 @@
 При создании виртуальных машин, Vagrant проверяет наличие виртуальной сети, имя которой содержится в описании машины и, если такая сеть уже существует, то он будет использовать её без изменения ранее заданных для нёё параметров.
 Это позволяет использовать одну крупную виртуальную сеть с 24-й маской, к которой подключены машины с настроенными сетевыми адаптерами на меньшую ёмкость сети. 
 Например, к заранее настроеной сети _192.168.3.0/24_ можно подключать виртуальные машины, в которых настроены интерфейсы для работы в сетях _192.168.3.0/26_, _192.168.3.64/26_, _192.168.3.128/26_ и _192.168.3.192/26_.
-Примеры описания виртуальных сетей - _vagrant-libvirt-inet.xml_:
+Примеры описания виртуальных сетей - _vagrant-libvirt-inet.xml_, здесь указан тип сети - _NAT_:
 ```
 <network ipv6='no'>
   <name>vagrant-libvirt-inet</name>
@@ -52,8 +52,7 @@
   </ip>
 </network>
 ```
-
-vagrant-libvirt-central.xml:
+В случае, если в файле описания сети не указан тип - _NAT_, то будет создана изолированная сеть. Например _vagrant-libvirt-central.xml_:
 ```
 <network ipv6='no'>
   <name>vagrant-libvirt-central</name>
@@ -67,4 +66,50 @@ vagrant-libvirt-central.xml:
     </dhcp>
   </ip>
 </network>
+```
+
+Сеть _vagrant-libvirt-main.xml_:
+```
+<network ipv6='no'>
+  <name>vagrant-libvirt-main</name>
+  <uuid>a4207727-8b33-4aeb-b8b1-9258dffd7ce4</uuid>
+  <bridge name="virbr6" stp="on" delay="0"/>
+  <mac address="52:54:00:e3:53:55"/>
+  <domain name="vagrant-libvirt-main"/>
+  <ip address="192.168.0.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="192.168.0.128" end="192.168.0.254"/>
+    </dhcp>
+  </ip>
+</network>
+```
+Все файлы описания виртуальных сетей прилагаются в данном репозитории. Для их запуска можно использовать такой скрипт (тоже [прилагается](vagrant-net-load-central.sh)):
+```
+#!/bin/bash
+if [ ! $(virsh net-list | grep central) ];
+    then
+        virsh net-define vagrant-libvirt-central.xml
+        virsh net-start vagrant-libvirt-central
+fi
+if [ ! $(virsh net-list | grep inet) ];
+    then
+        virsh net-define vagrant-libvirt-inet.xml
+        virsh net-start vagrant-libvirt-inet
+fi
+if [ ! $(virsh net-list | grep main) ];
+    then
+        virsh net-define vagrant-libvirt-main.xml
+        virsh net-start vagrant-libvirt-main
+fi
+if [ ! $(virsh net-list | grep office1) ];
+    then
+        virsh net-define vagrant-libvirt-office1.xml
+        virsh net-start vagrant-libvirt-office1
+fi
+if [ ! $(virsh net-list | grep office2) ];
+    then
+        virsh net-define vagrant-libvirt-office2.xml
+        virsh net-start vagrant-libvirt-office2
+fi
+virsh net-list
 ```
