@@ -128,7 +128,7 @@ iptables -t nat -A POSTROUTING ! -d 192.168.0.0/16 -o ens5 -j MASQUERADE
 ```
 apt install -y iptables
 ```
-На всех виртуальных машинах, кроме _inetRouter_, изменим маршрут по умолчанию, который обычно указывает на _ip_-адрес хоста в сети управления машиной. Например, для _centralRouter_ это будет _ip_-адрес машины _inetRouter_ в сети _vagrant-libvirt-inet1_. 
+На всех виртуальных машинах, кроме _inetRouter_, изменим маршрут по умолчанию, который обычно указывает на _ip_-адрес хоста в сети управления машиной. Например, для _centralRouter_ укажем _ip_-адрес машины _inetRouter_ в сети _vagrant-libvirt-inet1_. 
 Для _office1Router_ - _ip_-адрес машины _centralRouter_, принадлежащий сети _vagrant-libvirt-inet2_, и т.д. Пример для _centralRouter_:
 ```
 ip route del 0.0.0.0/0
