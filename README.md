@@ -97,7 +97,7 @@ if [ ! $(virsh net-list | grep office2) ];
 fi
 virsh net-list
 ```
-Так выглядит блок настроек с сетевыми параметрами для виртуальной машины в [Vagrantfile](Vagrantfile]:
+Так выглядит блок настроек с сетевыми параметрами для виртуальной машины в [_Vagrantfile_](Vagrantfile):
 ```
   centralrouter.vm.network :private_network,
        :type => 'ip',
