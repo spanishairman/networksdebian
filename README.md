@@ -107,8 +107,72 @@ virsh net-list
        :libvirt__always_destroy => 'false'
 ```
 
-Также можно использовать виртуальные сети, создаваемые непосредственно во время инициализации машин. Немного изменим схему:
+Также можно использовать виртуальные сети, создаваемые непосредственно во время инициализации машин. 
+
+Немного изменим схему:
 ![Схема](MyNetworks.drawio2.png)
+Здесь у сетей _vagrant-libvirt-central_, _vagrant-libvirt-inet_, _vagrant-libvirt-office1_ и _vagrant-libvirt-office2_ появились числовые индексы и сами сети стали меньше по маске.
+Пример файла для описания сети [vagrant-libvirt-central1](files/vagrant-libvirt-central1.xml):
+```
+<network connections='2' ipv6='no'>
+  <name>vagrant-libvirt-central1</name>
+  <uuid>5bcffc9b-99c4-4b28-a621-292c84eefe80</uuid>
+  <bridge name='virbr8' stp='on' delay='0'/>
+  <mac address='52:54:00:33:9c:d6'/>
+  <ip address='192.168.2.1' netmask='255.255.255.224'>
+  </ip>
+</network>
+```
+Файл описания сети [vagrant-libvirt-central2](files/vagrant-libvirt-central2.xml):
+```
+<network connections='1' ipv6='no'>
+  <name>vagrant-libvirt-central2</name>
+  <uuid>9ca9af04-327f-48c5-ab7a-9550a426af55</uuid>
+  <bridge name='virbr9' stp='on' delay='0'/>
+  <mac address='52:54:00:77:2f:d4'/>
+  <ip address='192.168.2.33' netmask='255.255.255.224'>
+  </ip>
+</network>
+
+```
+Пример [скрипта](files/vagrant-net-load-central.sh), создающего и запускаещего все необходимые сети:
+```
+#!/bin/bash
+for i in {1..3}; do
+if [ ! $(virsh net-list | grep central$i) ];
+    then
+        virsh net-define vagrant-libvirt-central$i.xml
+        virsh net-start vagrant-libvirt-central$i
+fi;
+done
+for i in {1..3}; do
+if [ ! $(virsh net-list | grep inet$i) ];
+    then
+        virsh net-define vagrant-libvirt-inet$i.xml
+        virsh net-start vagrant-libvirt-inet$i
+fi;
+done
+for i in {1..4}; do
+if [ ! $(virsh net-list | grep office1-$i) ];
+    then
+        virsh net-define vagrant-libvirt-office1-$i.xml
+        virsh net-start vagrant-libvirt-office1-$i
+fi;
+done
+for i in {1..3}; do
+if [ ! $(virsh net-list | grep office2-$i) ];
+    then
+        virsh net-define vagrant-libvirt-office2-$i.xml
+        virsh net-start vagrant-libvirt-office2-$i
+fi;
+done
+if [ ! $(virsh net-list | grep vagrant-libvirt-mgmt) ];
+    then
+        virsh net-define vagrant-libvirt-mgmt.xml
+        virsh net-start vagrant-libvirt-mgmt
+fi;
+virsh net-list
+```
 
 #### Настройка правил и маршрутов
 

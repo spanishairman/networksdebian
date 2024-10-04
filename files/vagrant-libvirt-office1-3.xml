@@ -1,0 +1,9 @@
+<network connections='2' ipv6='no'>
+  <name>vagrant-libvirt-office1-3</name>
+  <uuid>96f6f6e0-f827-4506-bddc-4216bf36142b</uuid>
+  <bridge name='virbr2' stp='on' delay='0'/>
+  <mac address='52:54:00:18:d5:07'/>
+  <ip address='192.168.3.129' netmask='255.255.255.192'>
+  </ip>
+</network>
+

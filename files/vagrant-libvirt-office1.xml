@@ -1,0 +1,12 @@
+<network ipv6='no'>
+  <name>vagrant-libvirt-office1</name>
+  <uuid>990f65c0-f24b-4174-8335-b02bc99c55ec</uuid>
+  <bridge name="virbr2" stp="on" delay="0"/>
+  <mac address="52:54:00:09:b5:9f"/>
+  <domain name="vagrant-libvirt-office1"/>
+  <ip address="192.168.3.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start='192.168.3.31' end='192.168.3.254'/>
+    </dhcp>
+  </ip>
+</network>
