@@ -1,0 +1,1084 @@
+Script started on 2024-10-04 13:20:06+03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="270" LINES="63"]
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant up
+[0mBringing machine 'Debian12-inetRouter' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-centralRouter' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-centralServer' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-office1Router' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-office2Router' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-office1Server' up with 'libvirt' provider...[0m
+[0mBringing machine 'Debian12-office2Server' up with 'libvirt' provider...[0m
+[1;33m==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.[0m
+[1;33m==> Debian12-centralRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-centralRouter: This is very often used by the router and can cause the
+==> Debian12-centralRouter: network to not work properly. If the network doesn't work
+==> Debian12-centralRouter: properly, try changing this IP.[0m
+[1;33m==> Debian12-office1Router: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-office1Router: This is very often used by the router and can cause the
+==> Debian12-office1Router: network to not work properly. If the network doesn't work
+==> Debian12-office1Router: properly, try changing this IP.[0m
+[1;33m==> Debian12-office2Router: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-office2Router: This is very often used by the router and can cause the
+==> Debian12-office2Router: network to not work properly. If the network doesn't work
+==> Debian12-office2Router: properly, try changing this IP.[0m
+[1;33m==> Debian12-centralServer: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-centralServer: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-centralServer: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1;33m==> Debian12-office1Server: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-office1Server: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-office1Server: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1;33m==> Debian12-office1Router: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-office1Router: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-office1Router: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1;33m==> Debian12-office2Router: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-office2Router: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-office2Router: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1m==> Debian12-office1Router: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-centralServer: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-office2Router: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-centralServer: Creating domain with the following settings...[0m
+[1m==> Debian12-office2Router: Creating domain with the following settings...[0m
+[1m==> Debian12-centralServer:  -- Name:              vg3_Debian12-centralServer[0m
+[1m==> Debian12-office1Server: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-office1Router: Creating domain with the following settings...[0m
+[1;33m==> Debian12-inetRouter: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-inetRouter: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-inetRouter: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1;33m==> Debian12-centralRouter: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-centralRouter: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-centralRouter: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1m==> Debian12-inetRouter: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-office2Router:  -- Name:              vg3_Debian12-office2Router[0m
+[1m==> Debian12-centralServer:  -- Title:             Debian12-centralServer[0m
+[1m==> Debian12-office1Router:  -- Name:              vg3_Debian12-office1Router[0m
+[1m==> Debian12-office1Router:  -- Title:             Debian12-office1Router[0m
+[1;33m==> Debian12-office2Server: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12-office2Server: generating a local metadata for the box with a version to allow better handling.
+==> Debian12-office2Server: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1m==> Debian12-office1Router:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. office1Router[0m
+[1m==> Debian12-office2Router:  -- Title:             Debian12-office2Router[0m
+[1m==> Debian12-inetRouter: Creating domain with the following settings...[0m
+[1m==> Debian12-centralRouter: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-centralServer:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. centralServer[0m
+[1m==> Debian12-office1Server: Creating domain with the following settings...[0m
+[1m==> Debian12-office2Server: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12-office1Router:  -- Domain type:       kvm[0m
+[1m==> Debian12-office2Router:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. office2Router[0m
+[1m==> Debian12-inetRouter:  -- Name:              vg3_Debian12-inetRouter[0m
+[1m==> Debian12-inetRouter:  -- Title:             Debian12-inetRouter[0m
+[1m==> Debian12-centralRouter: Creating domain with the following settings...[0m
+[1m==> Debian12-office1Server:  -- Name:              vg3_Debian12-office1Server[0m
+[1m==> Debian12-office1Router:  -- Cpus:              1[0m
+[1m==> Debian12-office2Server: Creating domain with the following settings...[0m
+[1m==> Debian12-office2Router:  -- Domain type:       kvm[0m
+[1m==> Debian12-office1Router:  -- Feature:           acpi[0m
+[1m==> Debian12-inetRouter:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. inetRouter[0m
+[1m==> Debian12-inetRouter:  -- Domain type:       kvm[0m
+[1m==> Debian12-office1Server:  -- Title:             Debian12-office1Server[0m
+[1m==> Debian12-office2Server:  -- Name:              vg3_Debian12-office2Server[0m
+[1m==> Debian12-centralServer:  -- Domain type:       kvm[0m
+[1m==> Debian12-office2Router:  -- Cpus:              1[0m
+[1m==> Debian12-centralServer:  -- Cpus:              1[0m
+[1m==> Debian12-office1Router:  -- Feature:           apic[0m
+[1m==> Debian12-inetRouter:  -- Cpus:              1[0m
+[1m==> Debian12-office1Server:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. office1Server[0m
+[1m==> Debian12-office2Server:  -- Title:             Debian12-office2Server[0m
+[1m==> Debian12-office1Server:  -- Domain type:       kvm[0m
+[1m==> Debian12-office2Router:  -- Feature:           acpi[0m
+[1m==> Debian12-centralServer:  -- Feature:           acpi[0m
+[1m==> Debian12-centralServer:  -- Feature:           apic[0m
+[1m==> Debian12-inetRouter:  -- Feature:           acpi[0m
+[1m==> Debian12-centralServer:  -- Feature:           pae[0m
+[1m==> Debian12-centralServer:  -- Clock offset:      utc[0m
+[1m==> Debian12-office2Server:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. office2Server[0m
+[1m==> Debian12-centralServer:  -- Memory:            1024M[0m
+[1m==> Debian12-office1Router:  -- Feature:           pae[0m
+[1m==> Debian12-inetRouter:  -- Feature:           apic[0m
+[1m==> Debian12-office1Router:  -- Clock offset:      utc[0m
+[1m==> Debian12-office1Server:  -- Cpus:              1[0m
+[1m==> Debian12-office1Router:  -- Memory:            1024M[0m
+[1m==> Debian12-office2Server:  -- Domain type:       kvm[0m
+[1m==> Debian12-centralServer:  -- Management MAC:    52:54:00:27:28:89[0m
+[1m==> Debian12-office2Server:  -- Cpus:              1[0m
+[1m==> Debian12-centralRouter:  -- Name:              vg3_Debian12-centralRouter[0m
+[1m==> Debian12-office1Server:  -- Feature:           acpi[0m
+[1m==> Debian12-office2Router:  -- Feature:           apic[0m
+[1m==> Debian12-office2Router:  -- Feature:           pae[0m
+[1m==> Debian12-centralServer:  -- Loader:            [0m
+[1m==> Debian12-inetRouter:  -- Feature:           pae[0m
+[1m==> Debian12-office2Server:  -- Feature:           acpi[0m
+[1m==> Debian12-centralRouter:  -- Title:             Debian12-centralRouter[0m
+[1m==> Debian12-centralRouter:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux. centralRouter[0m
+[1m==> Debian12-office1Router:  -- Management MAC:    52:54:00:27:28:85[0m
+[1m==> Debian12-office2Router:  -- Clock offset:      utc[0m
+[1m==> Debian12-inetRouter:  -- Clock offset:      utc[0m
+[1m==> Debian12-centralServer:  -- Nvram:             [0m
+[1m==> Debian12-office2Server:  -- Feature:           apic[0m
+[1m==> Debian12-office1Server:  -- Feature:           apic[0m
+[1m==> Debian12-centralRouter:  -- Domain type:       kvm[0m
+[1m==> Debian12-office2Router:  -- Memory:            1024M[0m
+[1m==> Debian12-office2Router:  -- Management MAC:    52:54:00:27:28:86[0m
+[1m==> Debian12-inetRouter:  -- Memory:            1024M[0m
+[1m==> Debian12-centralServer:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Server:  -- Feature:           pae[0m
+[1m==> Debian12-centralRouter:  -- Cpus:              1[0m
+[1m==> Debian12-office1Server:  -- Feature:           pae[0m
+[1m==> Debian12-office1Router:  -- Loader:            [0m
+[1m==> Debian12-office2Router:  -- Loader:            [0m
+[1m==> Debian12-inetRouter:  -- Management MAC:    52:54:00:27:28:83[0m
+[1m==> Debian12-office1Router:  -- Nvram:             [0m
+[1m==> Debian12-office2Server:  -- Clock offset:      utc[0m
+[1m==> Debian12-centralRouter:  -- Feature:           acpi[0m
+[1m==> Debian12-office1Server:  -- Clock offset:      utc[0m
+[1m==> Debian12-centralRouter:  -- Feature:           apic[0m
+[1m==> Debian12-centralServer:  -- Storage pool:      default[0m
+[1m==> Debian12-centralRouter:  -- Feature:           pae[0m
+[1m==> Debian12-office1Router:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-centralRouter:  -- Clock offset:      utc[0m
+[1m==> Debian12-office2Router:  -- Nvram:             [0m
+[1m==> Debian12-office1Server:  -- Memory:            1024M[0m
+[1m==> Debian12-office1Server:  -- Management MAC:    52:54:00:27:28:87[0m
+[1m==> Debian12-centralServer:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-centralServer.img, virtio, 40G[0m
+[1m==> Debian12-office2Server:  -- Memory:            1024M[0m
+[1m==> Debian12-office1Router:  -- Storage pool:      default[0m
+[1m==> Debian12-centralRouter:  -- Memory:            1024M[0m
+[1m==> Debian12-centralRouter:  -- Management MAC:    52:54:00:27:28:84[0m
+[1m==> Debian12-inetRouter:  -- Loader:            [0m
+[1m==> Debian12-office1Server:  -- Loader:            [0m
+[1m==> Debian12-office2Router:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Server:  -- Management MAC:    52:54:00:27:28:88[0m
+[1m==> Debian12-centralServer:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-office1Router:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-office1Router.img, virtio, 40G[0m
+[1m==> Debian12-centralRouter:  -- Loader:            [0m
+[1m==> Debian12-inetRouter:  -- Nvram:             [0m
+[1m==> Debian12-inetRouter:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Router:  -- Storage pool:      default[0m
+[1m==> Debian12-office2Server:  -- Loader:            [0m
+[1m==> Debian12-office2Router:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-office2Router.img, virtio, 40G[0m
+[1m==> Debian12-office1Router:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-office2Router:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-inetRouter:  -- Storage pool:      default[0m
+[1m==> Debian12-inetRouter:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-inetRouter.img, virtio, 40G[0m
+[1m==> Debian12-centralServer:  -- Kernel:            [0m
+[1m==> Debian12-office2Server:  -- Nvram:             [0m
+[1m==> Debian12-centralRouter:  -- Nvram:             [0m
+[1m==> Debian12-office2Server:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Router:  -- Kernel:            [0m
+[1m==> Debian12-office2Server:  -- Storage pool:      default[0m
+[1m==> Debian12-inetRouter:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-centralServer:  -- Initrd:            [0m
+[1m==> Debian12-office1Router:  -- Kernel:            [0m
+[1m==> Debian12-office1Router:  -- Initrd:            [0m
+[1m==> Debian12-office1Server:  -- Nvram:             [0m
+[1m==> Debian12-office1Router:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-office2Server:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-office2Server.img, virtio, 40G[0m
+[1m==> Debian12-inetRouter:  -- Kernel:            [0m
+[1m==> Debian12-centralServer:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-centralRouter:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Router:  -- Initrd:            [0m
+[1m==> Debian12-office1Router:  -- Graphics Port:     -1[0m
+[1m==> Debian12-office1Server:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12-office2Server:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-inetRouter:  -- Initrd:            [0m
+[1m==> Debian12-office2Server:  -- Kernel:            [0m
+[1m==> Debian12-office2Server:  -- Initrd:            [0m
+[1m==> Debian12-office2Router:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-office1Router:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office1Server:  -- Storage pool:      default[0m
+[1m==> Debian12-inetRouter:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-office1Router:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-centralServer:  -- Graphics Port:     -1[0m
+[1m==> Debian12-office2Server:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-centralServer:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office1Server:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-office1Server.img, virtio, 40G[0m
+[1m==> Debian12-centralRouter:  -- Storage pool:      default[0m
+[1m==> Debian12-office1Server:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-office1Router:  -- Video Type:        cirrus[0m
+[1m==> Debian12-centralRouter:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12-centralRouter.img, virtio, 40G[0m
+[1m==> Debian12-office2Server:  -- Graphics Port:     -1[0m
+[1m==> Debian12-centralServer:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-inetRouter:  -- Graphics Port:     -1[0m
+[1m==> Debian12-centralServer:  -- Video Type:        cirrus[0m
+[1m==> Debian12-office2Router:  -- Graphics Port:     -1[0m
+[1m==> Debian12-office1Server:  -- Kernel:            [0m
+[1m==> Debian12-centralRouter:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12-centralRouter:  -- Kernel:            [0m
+[1m==> Debian12-inetRouter:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office1Router:  -- Video VRAM:        16384[0m
+[1m==> Debian12-office1Router:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Router:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office2Server:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office1Server:  -- Initrd:            [0m
+[1m==> Debian12-office1Server:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-inetRouter:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-centralServer:  -- Video VRAM:        16384[0m
+[1m==> Debian12-office1Router:  -- Sound Type:        [0m
+[1m==> Debian12-centralServer:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Server:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-centralServer:  -- Sound Type:        [0m
+[1m==> Debian12-office1Server:  -- Graphics Port:     -1[0m
+[1m==> Debian12-inetRouter:  -- Video Type:        cirrus[0m
+[1m==> Debian12-office2Router:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-inetRouter:  -- Video VRAM:        16384[0m
+[1m==> Debian12-centralRouter:  -- Initrd:            [0m
+[1m==> Debian12-office2Server:  -- Video Type:        cirrus[0m
+[1m==> Debian12-centralServer:  -- Keymap:            en-us[0m
+[1m==> Debian12-office1Server:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-office2Router:  -- Video Type:        cirrus[0m
+[1m==> Debian12-office2Router:  -- Video VRAM:        16384[0m
+[1m==> Debian12-office2Router:  -- Video 3D accel:    false[0m
+[1m==> Debian12-centralRouter:  -- Graphics Type:     vnc[0m
+[1m==> Debian12-office2Server:  -- Video VRAM:        16384[0m
+[1m==> Debian12-centralServer:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-office1Server:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-office1Router:  -- Keymap:            en-us[0m
+[1m==> Debian12-inetRouter:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Router:  -- Sound Type:        [0m
+[1m==> Debian12-centralRouter:  -- Graphics Port:     -1[0m
+[1m==> Debian12-centralRouter:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12-centralServer:  -- TPM Path:          [0m
+[1m==> Debian12-office1Server:  -- Video Type:        cirrus[0m
+[1m==> Debian12-office1Router:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-office1Router:  -- TPM Path:          [0m
+[1m==> Debian12-office2Router:  -- Keymap:            en-us[0m
+[1m==> Debian12-office2Server:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Server:  -- Sound Type:        [0m
+[1m==> Debian12-centralServer:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-office2Server:  -- Keymap:            en-us[0m
+[1m==> Debian12-inetRouter:  -- Sound Type:        [0m
+[1m==> Debian12-office1Router:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-inetRouter:  -- Keymap:            en-us[0m
+[1m==> Debian12-centralRouter:  -- Graphics Password: Not defined[0m
+[1m==> Debian12-centralRouter:  -- Video Type:        cirrus[0m
+[1m==> Debian12-centralRouter:  -- Video VRAM:        16384[0m
+[1m==> Debian12-inetRouter:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-office2Router:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-office1Server:  -- Video VRAM:        16384[0m
+[1m==> Debian12-office1Server:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Router:  -- TPM Path:          [0m
+[1m==> Debian12-office2Router:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-office2Server:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-inetRouter:  -- TPM Path:          [0m
+[1m==> Debian12-centralRouter:  -- Video 3D accel:    false[0m
+[1m==> Debian12-office2Server:  -- TPM Path:          [0m
+[1m==> Debian12-centralRouter:  -- Sound Type:        [0m
+[1m==> Debian12-office1Server:  -- Sound Type:        [0m
+[1m==> Debian12-office2Server:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-office1Server:  -- Keymap:            en-us[0m
+[1m==> Debian12-inetRouter:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-centralRouter:  -- Keymap:            en-us[0m
+[1m==> Debian12-centralRouter:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-centralRouter:  -- TPM Path:          [0m
+[1m==> Debian12-office1Server:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12-office1Server:  -- TPM Path:          [0m
+[1m==> Debian12-office1Server:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12-centralRouter:  -- INPUT:             type=mouse, bus=ps2[0m
+[1;33m==> Debian12-office1Router: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-office1Router: This is very often used by the router and can cause the
+==> Debian12-office1Router: network to not work properly. If the network doesn't work
+==> Debian12-office1Router: properly, try changing this IP.[0m
+[1m==> Debian12-centralServer: Creating shared folders metadata...[0m
+[1m==> Debian12-centralServer: Starting domain.[0m
+[1m==> Debian12-office1Router: Creating shared folders metadata...[0m
+[1;33m==> Debian12-office2Router: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-office2Router: This is very often used by the router and can cause the
+==> Debian12-office2Router: network to not work properly. If the network doesn't work
+==> Debian12-office2Router: properly, try changing this IP.[0m
+[1m==> Debian12-centralServer: Waiting for domain to get an IP address...[0m
+[1m==> Debian12-centralServer: Waiting for machine to boot. This may take a few minutes...[0m
+[1m==> Debian12-office1Router: Starting domain.[0m
+[1;33m==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.[0m
+[1m==> Debian12-office1Router: Waiting for domain to get an IP address...[0m
+[1m==> Debian12-office1Router: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-office1Router: SSH address: 192.168.121.12:22[0m
+[0m    Debian12-office1Router: SSH username: vagrant[0m
+[0m    Debian12-office1Router: SSH auth method: private key[0m
+[0m    Debian12-centralServer: SSH address: 192.168.121.16:22[0m
+[1;33m==> Debian12-centralRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-centralRouter: This is very often used by the router and can cause the
+==> Debian12-centralRouter: network to not work properly. If the network doesn't work
+==> Debian12-centralRouter: properly, try changing this IP.[0m
+[0m    Debian12-centralServer: SSH username: vagrant[0m
+[0m    Debian12-centralServer: SSH auth method: private key[0m
+[1m==> Debian12-office2Router: Creating shared folders metadata...[0m
+[1m==> Debian12-office2Router: Starting domain.[0m
+[1m==> Debian12-office2Server: Creating shared folders metadata...[0m
+[1m==> Debian12-office2Server: Starting domain.[0m
+[1m==> Debian12-inetRouter: Creating shared folders metadata...[0m
+[1m==> Debian12-office2Router: Waiting for domain to get an IP address...[0m
+[0m    Debian12-centralServer: Warning: Host unreachable. Retrying...[0m
+[1m==> Debian12-office2Server: Waiting for domain to get an IP address...[0m
+[1m==> Debian12-office1Server: Creating shared folders metadata...[0m
+[0m    Debian12-office1Router: Warning: Host unreachable. Retrying...[0m
+[1m==> Debian12-inetRouter: Starting domain.[0m
+[1m==> Debian12-office2Router: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-office2Router: SSH address: 192.168.121.13:22[0m
+[1m==> Debian12-office2Server: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-office2Router: SSH username: vagrant[0m
+[1m==> Debian12-office1Server: Starting domain.[0m
+[0m    Debian12-office2Router: SSH auth method: private key[0m
+[1m==> Debian12-inetRouter: Waiting for domain to get an IP address...[0m
+[1m==> Debian12-inetRouter: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-office2Server: SSH address: 192.168.121.15:22[0m
+[0m    Debian12-office2Server: SSH username: vagrant[0m
+[1m==> Debian12-centralRouter: Creating shared folders metadata...[0m
+[1m==> Debian12-office1Server: Waiting for domain to get an IP address...[0m
+[0m    Debian12-office2Server: SSH auth method: private key[0m
+[1m==> Debian12-centralRouter: Starting domain.[0m
+[1m==> Debian12-office1Server: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-inetRouter: SSH address: 192.168.121.10:22[0m
+[0m    Debian12-inetRouter: SSH username: vagrant[0m
+[1m==> Debian12-centralRouter: Waiting for domain to get an IP address...[0m
+[0m    Debian12-office1Router: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office2Router: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office2Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-inetRouter: SSH auth method: private key[0m
+[0m    Debian12-centralServer: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Server: SSH address: 192.168.121.14:22[0m
+[1m==> Debian12-centralRouter: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12-office1Server: SSH username: vagrant[0m
+[0m    Debian12-centralRouter: SSH address: 192.168.121.11:22[0m
+[0m    Debian12-office1Server: SSH auth method: private key[0m
+[0m    Debian12-centralRouter: SSH username: vagrant[0m
+[0m    Debian12-centralRouter: SSH auth method: private key[0m
+[0m    Debian12-inetRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-centralRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Router: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office2Router: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-centralServer: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office2Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-inetRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-centralRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Router: 
+    Debian12-office1Router: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-office1Router: this with a newly generated keypair for better security.[0m
+[0m    Debian12-centralServer: 
+    Debian12-centralServer: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-centralServer: this with a newly generated keypair for better security.[0m
+[0m    Debian12-office1Router: 
+    Debian12-office1Router: Inserting generated public key within guest...[0m
+[0m    Debian12-office2Router: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office2Router: Warning: Connection refused. Retrying...[0m
+[0m    Debian12-office2Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-centralServer: 
+    Debian12-centralServer: Inserting generated public key within guest...[0m
+[0m    Debian12-office1Router: Removing insecure key from the guest if it's present...[0m
+[0m    Debian12-office2Router: 
+    Debian12-office2Router: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-office2Router: this with a newly generated keypair for better security.[0m
+[0m    Debian12-centralServer: Removing insecure key from the guest if it's present...[0m
+[0m    Debian12-office2Router: 
+    Debian12-office2Router: Inserting generated public key within guest...[0m
+[0m    Debian12-office1Router: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0m    Debian12-inetRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Server: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-centralRouter: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12-office1Server: Warning: Connection refused. Retrying...[0m
+[0m    Debian12-centralServer: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0m    Debian12-office2Server: Warning: Connection refused. Retrying...[0m
+[0m    Debian12-office2Router: Removing insecure key from the guest if it's present...[0m
+[1m==> Debian12-office1Router: Machine booted and ready![0m
+[1m==> Debian12-centralServer: Machine booted and ready![0m
+[0m    Debian12-office1Server: 
+    Debian12-office1Server: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-office1Server: this with a newly generated keypair for better security.[0m
+[0m    Debian12-inetRouter: 
+    Debian12-inetRouter: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-inetRouter: this with a newly generated keypair for better security.[0m
+[0m    Debian12-office2Router: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0m    Debian12-office2Server: 
+    Debian12-office2Server: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-office2Server: this with a newly generated keypair for better security.[0m
+[0m    Debian12-office1Server: 
+    Debian12-office1Server: Inserting generated public key within guest...[0m
+[0m    Debian12-inetRouter: 
+    Debian12-inetRouter: Inserting generated public key within guest...[0m
+[1m==> Debian12-centralServer: Configuring and enabling network interfaces...[0m
+[1m==> Debian12-office1Router: Configuring and enabling network interfaces...[0m
+[1m==> Debian12-office2Router: Machine booted and ready![0m
+[0m    Debian12-office2Server: 
+    Debian12-office2Server: Inserting generated public key within guest...[0m
+[0m    Debian12-office1Server: Removing insecure key from the guest if it's present...[0m
+[0m    Debian12-inetRouter: Removing insecure key from the guest if it's present...[0m
+[1m==> Debian12-office2Router: Configuring and enabling network interfaces...[0m
+[0m    Debian12-office2Server: Removing insecure key from the guest if it's present...[0m
+[0m    Debian12-inetRouter: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0m    Debian12-office1Server: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0m    Debian12-office2Server: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[1m==> Debian12-inetRouter: Machine booted and ready![0m
+[1m==> Debian12-office1Server: Machine booted and ready![0m
+[1m==> Debian12-centralServer: Running provisioner: shell...[0m
+[1m==> Debian12-office1Router: Running provisioner: shell...[0m
+[1m==> Debian12-office2Server: Machine booted and ready![0m
+[1m==> Debian12-inetRouter: Configuring and enabling network interfaces...[0m
+[1m==> Debian12-office1Server: Configuring and enabling network interfaces...[0m
+[0m    Debian12-office1Router: Running: inline script[0m
+[0m    Debian12-centralServer: Running: inline script[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;32m    Debian12-centralServer: Set Hostname[0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;32m    Debian12-office1Router: Set Hostname[0m
+[1m==> Debian12-office2Router: Running provisioner: shell...[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;32m    Debian12-centralServer: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;32m    Debian12-centralServer: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;32m    Debian12-centralServer: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-office1Router: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;32m    Debian12-office1Router: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;32m    Debian12-centralServer: *************************************************************[0m
+[0;31m    Debian12-centralServer: [0m
+[0;32m    Debian12-office1Router: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;31m    Debian12-centralServer: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-centralServer: [0m
+[0;32m    Debian12-office1Router: *************************************************************[0m
+[0;31m    Debian12-office1Router: [0m
+[0;31m    Debian12-office1Router: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office1Router: [0m
+[1m==> Debian12-office2Server: Configuring and enabling network interfaces...[0m
+[0m    Debian12-office2Router: Running: inline script[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-office2Router: Set Hostname[0m
+[0;32m    Debian12-office1Router: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-centralServer: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-office2Router: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-office2Router: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-office2Router: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-office2Router: *************************************************************[0m
+[0;32m    Debian12-office1Router: Пол:2 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-centralServer: Пол:2 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-office1Router: Пол:3 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-centralServer: Пол:3 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;31m    Debian12-office2Router: [0m
+[0;31m    Debian12-office2Router: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office2Router: [0m
+[1m==> Debian12-inetRouter: Running provisioner: shell...[0m
+[1m==> Debian12-office1Server: Running provisioner: shell...[0m
+[0;32m    Debian12-office2Router: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-office2Router: Пол:2 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-office2Router: Пол:3 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-office1Router: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0m    Debian12-centralRouter: 
+    Debian12-centralRouter: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12-centralRouter: this with a newly generated keypair for better security.[0m
+[0;32m    Debian12-centralServer: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0m    Debian12-inetRouter: Running: inline script[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[0;32m    Debian12-inetRouter: Set Hostname[0m
+[0m    Debian12-office1Server: Running: inline script[0m
+[0m    Debian12-centralRouter: 
+    Debian12-centralRouter: Inserting generated public key within guest...[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[0;32m    Debian12-inetRouter: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[0;32m    Debian12-inetRouter: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[0;32m    Debian12-inetRouter: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-inetRouter: *************************************************************[0m
+[1m==> Debian12-office2Server: Running provisioner: shell...[0m
+[0;31m    Debian12-inetRouter: [0m
+[0;31m    Debian12-inetRouter: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;31m    Debian12-inetRouter: [0m
+[0;32m    Debian12-office1Server: Set Hostname[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;32m    Debian12-office1Server: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;32m    Debian12-office1Server: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;32m    Debian12-office1Server: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-office1Server: *************************************************************[0m
+[0;31m    Debian12-office1Server: [0m
+[0;31m    Debian12-office1Server: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office1Server: [0m
+[0m    Debian12-office2Server: Running: inline script[0m
+[0m    Debian12-centralRouter: Removing insecure key from the guest if it's present...[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;32m    Debian12-office2Server: Set Hostname[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;32m    Debian12-office2Server: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;32m    Debian12-office2Server: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;32m    Debian12-office2Server: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-office2Server: *************************************************************[0m
+[0;31m    Debian12-office2Server: [0m
+[0;31m    Debian12-office2Server: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office2Server: [0m
+[0;32m    Debian12-office2Router: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0m    Debian12-centralRouter: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[0;32m    Debian12-office1Router: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[0;32m    Debian12-inetRouter: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-centralServer: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[1m==> Debian12-centralRouter: Machine booted and ready![0m
+[0;32m    Debian12-office1Server: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-office2Server: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-office1Server: Пол:2 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-office2Server: Пол:2 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[1m==> Debian12-centralRouter: Configuring and enabling network interfaces...[0m
+[0;32m    Debian12-inetRouter: Пол:2 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-office2Server: Пол:3 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-office1Server: Пол:3 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-office2Router: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[1m==> Debian12-centralRouter: Running provisioner: shell...[0m
+[0m    Debian12-centralRouter: Running: inline script[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;32m    Debian12-centralRouter: Set Hostname[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;32m    Debian12-centralRouter: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;32m    Debian12-centralRouter: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;32m    Debian12-centralRouter: Если ранее не были установлены, то установим необходимые  пакеты[0m
+[0;32m    Debian12-centralRouter: *************************************************************[0m
+[0;31m    Debian12-centralRouter: [0m
+[0;31m    Debian12-centralRouter: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-centralRouter: [0m
+[0;32m    Debian12-office1Router: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-centralServer: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-office1Server: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0;32m    Debian12-office2Server: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0;32m    Debian12-office1Router: Получено 518 kB за 10с (49,4 kB/s)[0m
+[0;32m    Debian12-centralServer: Получено 518 kB за 12с (43,9 kB/s)[0m
+[0;32m    Debian12-office2Router: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-office1Router: Чтение списков пакетов…[0m
+[0;32m    Debian12-office1Router: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office2Router: Получено 518 kB за 13с (40,2 kB/s)[0m
+[0;32m    Debian12-office1Router: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office1Router: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;32m    Debian12-office1Server: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[0;31m    Debian12-office1Router: [0m
+[0;31m    Debian12-office1Router: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office1Router: [0m
+[0;32m    Debian12-office2Server: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[0;32m    Debian12-office1Router: Чтение списков пакетов…[0m
+[0;32m    Debian12-centralRouter: Сущ:1 http://ftp.ru.debian.org/debian bookworm InRelease[0m
+[0;32m    Debian12-centralRouter: Пол:2 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-office1Router: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office1Router: Чтение информации о состоянии…[0m
+[0;32m    Debian12-centralRouter: Пол:3 http://ftp.ru.debian.org/debian bookworm-updates InRelease [55,4 kB][0m
+[0;32m    Debian12-office1Router: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-office1Router: Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-office1Router: net.ipv4.conf.all.forwarding = 1[0m
+[0;32m    Debian12-centralServer: Чтение списков пакетов…[0m
+[0;32m    Debian12-centralServer: Построение дерева зависимостей…[0m
+[0;32m    Debian12-centralServer: Чтение информации о состоянии…[0m
+[0;32m    Debian12-centralServer: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-centralServer: [0m
+[0;31m    Debian12-centralServer: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-centralServer: [0m
+[0;32m    Debian12-centralServer: Чтение списков пакетов…[0m
+[0;32m    Debian12-centralServer: Построение дерева зависимостей…[0m
+[0;32m    Debian12-centralServer: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office2Server: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-office1Server: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-centralRouter: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0;32m    Debian12-centralServer: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-centralServer: Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-office2Router: Чтение списков пакетов…[0m
+[0;32m    Debian12-office2Router: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office2Router: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office2Router: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-office2Router: [0m
+[0;31m    Debian12-office2Router: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office2Router: [0m
+[0;32m    Debian12-office2Router: Чтение списков пакетов…[0m
+[0;32m    Debian12-office2Router: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office2Router: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office2Router: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-office2Router: Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-office2Router: net.ipv4.conf.all.forwarding = 1[0m
+[0;32m    Debian12-office2Server: Получено 518 kB за 15с (34,8 kB/s)[0m
+[0;32m    Debian12-office1Server: Получено 518 kB за 16с (32,7 kB/s)[0m
+[0;32m    Debian12-centralRouter: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[0;32m    Debian12-centralRouter: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-centralRouter: Получено 518 kB за 13с (39,5 kB/s)[0m
+[0;32m    Debian12-office2Server: Чтение списков пакетов…[0m
+[0;32m    Debian12-office1Server: Чтение списков пакетов…[0m
+[0;32m    Debian12-office2Server: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office2Server: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office2Server: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-office2Server: [0m
+[0;31m    Debian12-office2Server: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office2Server: [0m
+[0;32m    Debian12-office2Server: Чтение списков пакетов…[0m
+[0;32m    Debian12-office1Server: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office1Server: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office1Server: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-office1Server: [0m
+[0;31m    Debian12-office1Server: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-office1Server: [0m
+[0;32m    Debian12-office1Server: Чтение списков пакетов…[0m
+[0;32m    Debian12-office2Server: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office2Server: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office1Server: Построение дерева зависимостей…[0m
+[0;32m    Debian12-office1Server: Чтение информации о состоянии…[0m
+[0;32m    Debian12-office2Server: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-office2Server: Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-office1Server: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-office1Server: Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-centralRouter: Чтение списков пакетов…[0m
+[0;32m    Debian12-centralRouter: Построение дерева зависимостей…[0m
+[0;32m    Debian12-centralRouter: Чтение информации о состоянии…[0m
+[0;32m    Debian12-centralRouter: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-centralRouter: [0m
+[0;31m    Debian12-centralRouter: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-centralRouter: [0m
+[0;32m    Debian12-centralRouter: Чтение списков пакетов…[0m
+[0;32m    Debian12-centralRouter: Построение дерева зависимостей…[0m
+[0;32m    Debian12-centralRouter: Чтение информации о состоянии…[0m
+[0;32m    Debian12-centralRouter: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-centralRouter: Будут установлены следующие дополнительные пакеты:[0m
+[0;32m    Debian12-centralRouter:   libip6tc2 libnetfilter-conntrack3 libnfnetlink0[0m
+[0;32m    Debian12-centralRouter: Предлагаемые пакеты:[0m
+[0;32m    Debian12-centralRouter:   firewalld[0m
+[0;32m    Debian12-centralRouter: Следующие НОВЫЕ пакеты будут установлены:[0m
+[0;32m    Debian12-centralRouter:   iptables libip6tc2 libnetfilter-conntrack3 libnfnetlink0[0m
+[0;32m    Debian12-centralRouter: Обновлено 0 пакетов, установлено 4 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-centralRouter: Необходимо скачать 435 kB архивов.[0m
+[0;32m    Debian12-centralRouter: После данной операции объём занятого дискового пространства возрастёт на 2 728 kB.[0m
+[0;32m    Debian12-centralRouter: Пол:1 http://ftp.ru.debian.org/debian bookworm/main amd64 libip6tc2 amd64 1.8.9-2 [19,4 kB][0m
+[0;32m    Debian12-centralRouter: Пол:2 http://ftp.ru.debian.org/debian bookworm/main amd64 libnfnetlink0 amd64 1.0.2-2 [15,1 kB][0m
+[0;32m    Debian12-centralRouter: Пол:3 http://ftp.ru.debian.org/debian bookworm/main amd64 libnetfilter-conntrack3 amd64 1.0.9-3 [40,7 kB][0m
+[0;32m    Debian12-centralRouter: Пол:4 http://ftp.ru.debian.org/debian bookworm/main amd64 iptables amd64 1.8.9-2 [360 kB][0m
+[0;32m    Debian12-centralRouter: Получено 435 kB за 3с (144 kB/s)[0m
+[0;32m    Debian12-centralRouter: Выбор ранее не выбранного пакета libip6tc2:amd64.[0m
+[0;32m    Debian12-centralRouter: (Чтение базы данных … (Чтение базы данных … 5%(Чтение базы данных … 10%(Чтение базы данных … 15%(Чтение базы данных … 20%(Чтение базы данных … 25%(Чтение базы данных … 30%(Чтение базы данных … 35%(Чтение базы данных … 40%(Чтение базы данных … 45%(Чтение базы данных … 50%(Чтение базы данных … 55%(Чтение базы данных … 60%(Чтение базы данных … 65%(Чтение базы данных … 70%(Чтение базы данных … 75%(Чтение базы данных … 80%(Чтение базы данных … 85%(Чтение базы данных … 90%(Чтение базы данных … 95%(Чтение базы данных … 100%(Чтение базы данных … на данный момент установлено 34810 файлов и каталогов.)[0m
+[0;32m    Debian12-centralRouter: Подготовка к распаковке …/libip6tc2_1.8.9-2_amd64.deb …[0m
+[0;32m    Debian12-centralRouter: Распаковывается libip6tc2:amd64 (1.8.9-2) …[0m
+[0;32m    Debian12-centralRouter: Выбор ранее не выбранного пакета libnfnetlink0:amd64.[0m
+[0;32m    Debian12-centralRouter: Подготовка к распаковке …/libnfnetlink0_1.0.2-2_amd64.deb …[0m
+[0;32m    Debian12-centralRouter: Распаковывается libnfnetlink0:amd64 (1.0.2-2) …[0m
+[0;32m    Debian12-centralRouter: Выбор ранее не выбранного пакета libnetfilter-conntrack3:amd64.[0m
+[0;32m    Debian12-centralRouter: Подготовка к распаковке …/libnetfilter-conntrack3_1.0.9-3_amd64.deb …[0m
+[0;32m    Debian12-centralRouter: Распаковывается libnetfilter-conntrack3:amd64 (1.0.9-3) …[0m
+[0;32m    Debian12-centralRouter: Выбор ранее не выбранного пакета iptables.[0m
+[0;32m    Debian12-centralRouter: Подготовка к распаковке …/iptables_1.8.9-2_amd64.deb …[0m
+[0;32m    Debian12-centralRouter: Распаковывается iptables (1.8.9-2) …[0m
+[0;32m    Debian12-centralRouter: Настраивается пакет libip6tc2:amd64 (1.8.9-2) …[0m
+[0;32m    Debian12-centralRouter: Настраивается пакет libnfnetlink0:amd64 (1.0.2-2) …[0m
+[0;32m    Debian12-centralRouter: Настраивается пакет libnetfilter-conntrack3:amd64 (1.0.9-3) …[0m
+[0;32m    Debian12-centralRouter: Настраивается пакет iptables (1.8.9-2) …[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/iptables-legacy для предоставления /usr/sbin/iptables (iptables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/ip6tables-legacy для предоставления /usr/sbin/ip6tables (ip6tables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/iptables-nft для предоставления /usr/sbin/iptables (iptables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/ip6tables-nft для предоставления /usr/sbin/ip6tables (ip6tables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/arptables-nft для предоставления /usr/sbin/arptables (arptables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: update-alternatives: используется /usr/sbin/ebtables-nft для предоставления /usr/sbin/ebtables (ebtables) в автоматическом режиме[0m
+[0;32m    Debian12-centralRouter: Обрабатываются триггеры для man-db (2.11.2-2) …[0m
+[0;32m    Debian12-centralRouter: Обрабатываются триггеры для libc-bin (2.36-9+deb12u8) …[0m
+[0;32m    Debian12-centralRouter: net.ipv4.conf.all.forwarding = 1[0m
+[0;32m    Debian12-inetRouter: Пол:3 http://security.debian.org/debian-security bookworm-security InRelease [48,0 kB][0m
+[0;32m    Debian12-inetRouter: Пол:4 http://security.debian.org/debian-security bookworm-security/main Sources [114 kB][0m
+[0;32m    Debian12-inetRouter: Пол:5 http://security.debian.org/debian-security bookworm-security/main amd64 Packages [186 kB][0m
+[0;32m    Debian12-inetRouter: Пол:6 http://security.debian.org/debian-security bookworm-security/main Translation-en [113 kB][0m
+[0;32m    Debian12-inetRouter: Получено 518 kB за 34с (15,1 kB/s)[0m
+[0;32m    Debian12-inetRouter: Чтение списков пакетов…[0m
+[0;32m    Debian12-inetRouter: Построение дерева зависимостей…[0m
+[0;32m    Debian12-inetRouter: Чтение информации о состоянии…[0m
+[0;32m    Debian12-inetRouter: Может быть обновлён 1 пакет. Запустите «apt list --upgradable» для показа.[0m
+[0;31m    Debian12-inetRouter: [0m
+[0;31m    Debian12-inetRouter: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12-inetRouter: [0m
+[0;32m    Debian12-inetRouter: Чтение списков пакетов…[0m
+[0;32m    Debian12-inetRouter: Построение дерева зависимостей…[0m
+[0;32m    Debian12-inetRouter: Чтение информации о состоянии…[0m
+[0;32m    Debian12-inetRouter: Уже установлен пакет traceroute самой новой версии (1:2.1.2-1).[0m
+[0;32m    Debian12-inetRouter: Будут установлены следующие дополнительные пакеты:[0m
+[0;32m    Debian12-inetRouter:   libip6tc2 libnetfilter-conntrack3 libnfnetlink0 netfilter-persistent[0m
+[0;32m    Debian12-inetRouter: Предлагаемые пакеты:[0m
+[0;32m    Debian12-inetRouter:   firewalld[0m
+[0;32m    Debian12-inetRouter: Следующие НОВЫЕ пакеты будут установлены:[0m
+[0;32m    Debian12-inetRouter:   iptables iptables-persistent libip6tc2 libnetfilter-conntrack3 libnfnetlink0[0m
+[0;32m    Debian12-inetRouter:   netfilter-persistent[0m
+[0;32m    Debian12-inetRouter: Обновлено 0 пакетов, установлено 6 новых пакетов, для удаления отмечено 0 пакетов, и 1 пакетов не обновлено.[0m
+[0;32m    Debian12-inetRouter: Необходимо скачать 452 kB архивов.[0m
+[0;32m    Debian12-inetRouter: После данной операции объём занятого дискового пространства возрастёт на 2 817 kB.[0m
+[0;32m    Debian12-inetRouter: Пол:1 http://ftp.ru.debian.org/debian bookworm/main amd64 libip6tc2 amd64 1.8.9-2 [19,4 kB][0m
+[0;32m    Debian12-inetRouter: Пол:2 http://ftp.ru.debian.org/debian bookworm/main amd64 libnfnetlink0 amd64 1.0.2-2 [15,1 kB][0m
+[0;32m    Debian12-inetRouter: Пол:3 http://ftp.ru.debian.org/debian bookworm/main amd64 libnetfilter-conntrack3 amd64 1.0.9-3 [40,7 kB][0m
+[0;32m    Debian12-inetRouter: Пол:4 http://ftp.ru.debian.org/debian bookworm/main amd64 iptables amd64 1.8.9-2 [360 kB][0m
+[0;32m    Debian12-inetRouter: Пол:5 http://ftp.ru.debian.org/debian bookworm/main amd64 netfilter-persistent all 1.0.20 [7 384 B][0m
+[0;32m    Debian12-inetRouter: Пол:6 http://ftp.ru.debian.org/debian bookworm/main amd64 iptables-persistent all 1.0.20 [9 000 B][0m
+[0;32m    Debian12-inetRouter: Предварительная настройка пакетов …[0m
+[0;32m    Debian12-inetRouter: Получено 452 kB за 3с (139 kB/s)[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета libip6tc2:amd64.[0m
+[0;32m    Debian12-inetRouter: (Чтение базы данных … (Чтение базы данных … 5%(Чтение базы данных … 10%(Чтение базы данных … 15%(Чтение базы данных … 20%(Чтение базы данных … 25%(Чтение базы данных … 30%(Чтение базы данных … 35%(Чтение базы данных … 40%(Чтение базы данных … 45%(Чтение базы данных … 50%(Чтение базы данных … 55%(Чтение базы данных … 60%(Чтение базы данных … 65%(Чтение базы данных … 70%(Чтение базы данных … 75%(Чтение базы данных … 80%(Чтение базы данных … 85%(Чтение базы данных … 90%(Чтение базы данных … 95%(Чтение базы данных … 100%(Чтение базы данных … на данный момент установлено 34810 файлов и каталогов.)[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/libip6tc2_1.8.9-2_amd64.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается libip6tc2:amd64 (1.8.9-2) …[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета libnfnetlink0:amd64.[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/libnfnetlink0_1.0.2-2_amd64.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается libnfnetlink0:amd64 (1.0.2-2) …[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета libnetfilter-conntrack3:amd64.[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/libnetfilter-conntrack3_1.0.9-3_amd64.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается libnetfilter-conntrack3:amd64 (1.0.9-3) …[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета iptables.[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/iptables_1.8.9-2_amd64.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается iptables (1.8.9-2) …[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета netfilter-persistent.[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/netfilter-persistent_1.0.20_all.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается netfilter-persistent (1.0.20) …[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет libip6tc2:amd64 (1.8.9-2) …[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет libnfnetlink0:amd64 (1.0.2-2) …[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет libnetfilter-conntrack3:amd64 (1.0.9-3) …[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет iptables (1.8.9-2) …[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/iptables-legacy для предоставления /usr/sbin/iptables (iptables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/ip6tables-legacy для предоставления /usr/sbin/ip6tables (ip6tables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/iptables-nft для предоставления /usr/sbin/iptables (iptables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/ip6tables-nft для предоставления /usr/sbin/ip6tables (ip6tables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/arptables-nft для предоставления /usr/sbin/arptables (arptables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: update-alternatives: используется /usr/sbin/ebtables-nft для предоставления /usr/sbin/ebtables (ebtables) в автоматическом режиме[0m
+[0;32m    Debian12-inetRouter: Выбор ранее не выбранного пакета iptables-persistent.[0m
+[0;32m    Debian12-inetRouter: (Чтение базы данных … (Чтение базы данных … 5%(Чтение базы данных … 10%(Чтение базы данных … 15%(Чтение базы данных … 20%(Чтение базы данных … 25%(Чтение базы данных … 30%(Чтение базы данных … 35%(Чтение базы данных … 40%(Чтение базы данных … 45%(Чтение базы данных … 50%(Чтение базы данных … 55%(Чтение базы данных … 60%(Чтение базы данных … 65%(Чтение базы данных … 70%(Чтение базы данных … 75%(Чтение базы данных … 80%(Чтение базы данных … 85%(Чтение базы данных … 90%(Чтение базы данных … 95%(Чтение базы данных … 100%(Чтение базы данных … на данный момент установлено 35042 файла и каталога.)[0m
+[0;32m    Debian12-inetRouter: Подготовка к распаковке …/iptables-persistent_1.0.20_all.deb …[0m
+[0;32m    Debian12-inetRouter: Распаковывается iptables-persistent (1.0.20) …[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет netfilter-persistent (1.0.20) …[0m
+[0;32m    Debian12-inetRouter: Created symlink /etc/systemd/system/iptables.service → /lib/systemd/system/netfilter-persistent.service.[0m
+[0;32m    Debian12-inetRouter: Created symlink /etc/systemd/system/ip6tables.service → /lib/systemd/system/netfilter-persistent.service.[0m
+[0;32m    Debian12-inetRouter: Created symlink /etc/systemd/system/multi-user.target.wants/netfilter-persistent.service → /lib/systemd/system/netfilter-persistent.service.[0m
+[0;32m    Debian12-inetRouter: Настраивается пакет iptables-persistent (1.0.20) …[0m
+[0;32m    Debian12-inetRouter: Обрабатываются триггеры для man-db (2.11.2-2) …[0m
+[0;32m    Debian12-inetRouter: Обрабатываются триггеры для libc-bin (2.36-9+deb12u8) …[0m
+[0;31m    Debian12-inetRouter: run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save[0m
+[0;31m    Debian12-inetRouter: run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save[0m
+[0;32m    Debian12-inetRouter: net.ipv4.conf.all.forwarding = 1[0m
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant ssh Debian12-inetRouter 
+[1;33m==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.[0m
+Linux inetrouter 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Sep 30 11:45:32 2024
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ip[K[Kip route 
+[?2004ldefault via 192.168.121.1 dev ens5 
+192.168.1.0/30 dev ens6 proto kernel scope link src 192.168.1.1 
+192.168.1.4/30 via 192.168.1.2 dev ens6 
+192.168.1.8/30 via 192.168.1.2 dev ens6 
+192.168.2.0/24 via 192.168.1.2 dev ens6 
+192.168.3.0/24 via 192.168.1.2 dev ens6 
+192.168.4.0/24 via 192.168.1.2 dev ens6 
+192.168.121.0/24 dev ens5 proto kernel scope link src 192.168.121.10 
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ sudo -i
+[?2004l[?2004hroot@inetrouter:~# iptables -t nat -nvL
+[?2004lChain PREROUTING (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    1    76 MASQUERADE  0    --  *      ens5    0.0.0.0/0           !192.168.0.0/16      
+[?2004hroot@inetrouter:~# [?2004l
+выход
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.1.1
+[?2004lPING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=66 time=0.063 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=66 time=0.053 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=66 time=0.052 ms
+64 bytes from 192.168.1.1: icmp_seq=4 ttl=66 time=0.054 ms
+64 bytes from 192.168.1.1: icmp_seq=5 ttl=66 time=0.053 ms
+^C
+--- 192.168.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4088ms
+rtt min/avg/max/mdev = 0.052/0.055/0.063/0.004 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.1.1[K2
+[?2004lPING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
+64 bytes from 192.168.1.2: icmp_seq=6 ttl=66 time=0.434 ms
+64 bytes from 192.168.1.2: icmp_seq=7 ttl=66 time=0.354 ms
+64 bytes from 192.168.1.2: icmp_seq=8 ttl=66 time=0.402 ms
+64 bytes from 192.168.1.2: icmp_seq=9 ttl=66 time=0.400 ms
+64 bytes from 192.168.1.2: icmp_seq=10 ttl=66 time=0.396 ms
+64 bytes from 192.168.1.2: icmp_seq=11 ttl=66 time=0.401 ms
+64 bytes from 192.168.1.2: icmp_seq=12 ttl=66 time=0.375 ms
+64 bytes from 192.168.1.2: icmp_seq=13 ttl=66 time=0.454 ms
+^C
+--- 192.168.1.2 ping statistics ---
+13 packets transmitted, 8 received, 38.4615% packet loss, time 12258ms
+rtt min/avg/max/mdev = 0.354/0.402/0.454/0.029 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.1.2[K5
+[?2004lPING 192.168.1.5 (192.168.1.5) 56(84) bytes of data.
+64 bytes from 192.168.1.5: icmp_seq=1 ttl=66 time=0.284 ms
+64 bytes from 192.168.1.5: icmp_seq=2 ttl=66 time=0.358 ms
+64 bytes from 192.168.1.5: icmp_seq=3 ttl=66 time=0.321 ms
+64 bytes from 192.168.1.5: icmp_seq=4 ttl=66 time=0.316 ms
+64 bytes from 192.168.1.5: icmp_seq=5 ttl=66 time=0.344 ms
+64 bytes from 192.168.1.5: icmp_seq=6 ttl=66 time=0.306 ms
+64 bytes from 192.168.1.5: icmp_seq=7 ttl=66 time=0.488 ms
+^C
+--- 192.168.1.5 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6148ms
+rtt min/avg/max/mdev = 0.284/0.345/0.488/0.062 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.1.5[K6
+[?2004lPING 192.168.1.6 (192.168.1.6) 56(84) bytes of data.
+64 bytes from 192.168.1.6: icmp_seq=6 ttl=65 time=0.677 ms
+64 bytes from 192.168.1.6: icmp_seq=7 ttl=65 time=0.609 ms
+64 bytes from 192.168.1.6: icmp_seq=8 ttl=65 time=0.723 ms
+^C
+--- 192.168.1.6 ping statistics ---
+8 packets transmitted, 3 received, 62.5% packet loss, time 7122ms
+rtt min/avg/max/mdev = 0.609/0.669/0.723/0.046 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.1.6[K[K[K3.129
+[?2004lPING 192.168.3.129 (192.168.3.129) 56(84) bytes of data.
+64 bytes from 192.168.3.129: icmp_seq=1 ttl=65 time=0.457 ms
+64 bytes from 192.168.3.129: icmp_seq=2 ttl=65 time=0.709 ms
+64 bytes from 192.168.3.129: icmp_seq=3 ttl=65 time=0.602 ms
+64 bytes from 192.168.3.129: icmp_seq=4 ttl=65 time=0.655 ms
+^C
+--- 192.168.3.129 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3006ms
+rtt min/avg/max/mdev = 0.457/0.605/0.709/0.093 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ping 192.168.3.129[K[K30
+[?2004lPING 192.168.3.130 (192.168.3.130) 56(84) bytes of data.
+64 bytes from 192.168.3.130: icmp_seq=7 ttl=64 time=0.993 ms
+64 bytes from 192.168.3.130: icmp_seq=8 ttl=64 time=0.766 ms
+64 bytes from 192.168.3.130: icmp_seq=9 ttl=64 time=1.04 ms
+64 bytes from 192.168.3.130: icmp_seq=10 ttl=64 time=0.981 ms
+64 bytes from 192.168.3.130: icmp_seq=11 ttl=64 time=0.882 ms
+64 bytes from 192.168.3.130: icmp_seq=12 ttl=64 time=1.04 ms
+64 bytes from 192.168.3.130: icmp_seq=13 ttl=64 time=0.993 ms
+^C
+--- 192.168.3.130 ping statistics ---
+13 packets transmitted, 7 received, 46.1538% packet loss, time 12133ms
+rtt min/avg/max/mdev = 0.766/0.957/1.044/0.092 ms
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ sudo -i
+[?2004l[?2004hroot@inetrouter:~# reboot 
+[?2004l
+Broadcast message from root@debian12 on pts/1 (Fri 2024-10-04 13:24:36 MSK):
+
+The system will reboot now!
+
+[?2004hroot@inetrouter:~# Connection to 192.168.121.10 closed by remote host.
+Connection to 192.168.121.10 closed.
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant ssh Debian12-inetRouter 
+[1;33m==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.[0m
+Linux inetrouter 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Oct  4 13:22:35 2024 from 192.168.121.1
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ ip route 
+[?2004ldefault via 192.168.121.1 dev ens5 
+192.168.1.0/30 dev ens6 proto kernel scope link src 192.168.1.1 
+192.168.1.4/30 via 192.168.1.2 dev ens6 
+192.168.1.8/30 via 192.168.1.2 dev ens6 
+192.168.2.0/24 via 192.168.1.2 dev ens6 
+192.168.3.0/24 via 192.168.1.2 dev ens6 
+192.168.4.0/24 via 192.168.1.2 dev ens6 
+192.168.121.0/24 dev ens5 proto kernel scope link src 192.168.121.10 
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ sudo -i
+[?2004l[?2004hroot@inetrouter:~# reboot iptables -t nat -nvL
+[?2004lChain PREROUTING (policy ACCEPT 13 packets, 2429 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain INPUT (policy ACCEPT 1 packets, 60 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 20 packets, 1340 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain POSTROUTING (policy ACCEPT 20 packets, 1340 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    1    76 MASQUERADE  0    --  *      ens5    0.0.0.0/0           !192.168.0.0/16      
+[?2004hroot@inetrouter:~# [?2004l
+выход
+[?2004h]0;vagrant@inetrouter: ~[01;32mvagrant@inetrouter[00m:[01;34m~[00m$ [?2004l
+выход
+Connection to 192.168.121.10 closed.
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant ssh Debian12-inetRouter [K[K[K[K[K[K[K[K[K[K[Koffice2Server 
+Linux office2server 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Sep 30 11:45:32 2024
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ip route 
+[?2004ldefault via 192.168.4.1 dev ens6 
+192.168.4.0/25 dev ens6 proto kernel scope link src 192.168.4.2 
+192.168.121.0/24 dev ens5 proto kernel scope link src 192.168.121.15 
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ping 192.168.2.2
+[?2004lPING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
+From 192.168.4.1 icmp_seq=1 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=2 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=3 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=4 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=5 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=6 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=7 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=8 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=9 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=10 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=11 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=12 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=13 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=14 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=15 Destination Port Unreachable
+^C
+--- 192.168.2.2 ping statistics ---
+15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14322ms
+
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ping 192.168.2.2[K[K[K4.1
+[?2004lPING 192.168.4.1 (192.168.4.1) 56(84) bytes of data.
+64 bytes from 192.168.4.1: icmp_seq=1 ttl=65 time=0.186 ms
+64 bytes from 192.168.4.1: icmp_seq=2 ttl=65 time=0.242 ms
+64 bytes from 192.168.4.1: icmp_seq=3 ttl=65 time=0.240 ms
+64 bytes from 192.168.4.1: icmp_seq=4 ttl=65 time=0.277 ms
+64 bytes from 192.168.4.1: icmp_seq=5 ttl=65 time=0.273 ms
+64 bytes from 192.168.4.1: icmp_seq=6 ttl=65 time=0.204 ms
+64 bytes from 192.168.4.1: icmp_seq=7 ttl=65 time=0.291 ms
+64 bytes from 192.168.4.1: icmp_seq=8 ttl=65 time=0.198 ms
+64 bytes from 192.168.4.1: icmp_seq=9 ttl=65 time=0.282 ms
+64 bytes from 192.168.4.1: icmp_seq=10 ttl=65 time=0.230 ms
+^C
+--- 192.168.4.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9173ms
+rtt min/avg/max/mdev = 0.186/0.242/0.291/0.035 ms
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ping 192.168.4.1[K[K[K1.10
+[?2004lPING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
+From 192.168.4.1 icmp_seq=1 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=2 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=3 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=4 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=5 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=6 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=7 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=8 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=9 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=10 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=11 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=12 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=13 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=14 Destination Port Unreachable
+From 192.168.4.1 icmp_seq=15 Destination Port Unreachable
+^C
+--- 192.168.1.10 ping statistics ---
+15 packets transmitted, 0 received, +15 errors, 100% packet loss, time 14333ms
+
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ [?2004l
+выход
+Connection to 192.168.121.15 closed.
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant ssh Debian12-office2Server [K[K[K[K[K[K[K[K[K[K[K[K[K[KcentralRouter 
+[1;33m==> Debian12-centralRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-centralRouter: This is very often used by the router and can cause the
+==> Debian12-centralRouter: network to not work properly. If the network doesn't work
+==> Debian12-centralRouter: properly, try changing this IP.[0m
+Linux centralrouter 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Sep 30 11:45:32 2024
+[?2004h]0;vagrant@centralrouter: ~[01;32mvagrant@centralrouter[00m:[01;34m~[00m$ sudo -i[Kping 192.168.4.2
+[?2004lPING 192.168.4.2 (192.168.4.2) 56(84) bytes of data.
+64 bytes from 192.168.4.2: icmp_seq=7 ttl=65 time=0.758 ms
+64 bytes from 192.168.4.2: icmp_seq=8 ttl=65 time=0.696 ms
+64 bytes from 192.168.4.2: icmp_seq=9 ttl=65 time=0.855 ms
+64 bytes from 192.168.4.2: icmp_seq=10 ttl=65 time=0.830 ms
+^C
+--- 192.168.4.2 ping statistics ---
+10 packets transmitted, 4 received, 60% packet loss, time 9156ms
+rtt min/avg/max/mdev = 0.696/0.784/0.855/0.062 ms
+[?2004h]0;vagrant@centralrouter: ~[01;32mvagrant@centralrouter[00m:[01;34m~[00m$ ping 192.168.4.2[1P.22.2
+[?2004lPING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
+64 bytes from 192.168.2.2: icmp_seq=6 ttl=66 time=0.410 ms
+64 bytes from 192.168.2.2: icmp_seq=7 ttl=66 time=0.340 ms
+64 bytes from 192.168.2.2: icmp_seq=8 ttl=66 time=0.322 ms
+64 bytes from 192.168.2.2: icmp_seq=9 ttl=66 time=0.450 ms
+64 bytes from 192.168.2.2: icmp_seq=10 ttl=66 time=0.391 ms
+^C
+--- 192.168.2.2 ping statistics ---
+10 packets transmitted, 5 received, 50% packet loss, time 9194ms
+rtt min/avg/max/mdev = 0.322/0.382/0.450/0.046 ms
+[?2004h]0;vagrant@centralrouter: ~[01;32mvagrant@centralrouter[00m:[01;34m~[00m$ [?2004l
+выход
+Connection to 192.168.121.11 closed.
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> vagrant ssh Debian12-centralRouter office2Serv[C[C[C
+Linux office2server 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Oct  4 13:25:30 2024 from 192.168.121.1
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ping 192.168.1.10
+[?2004lPING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
+64 bytes from 192.168.1.10: icmp_seq=1 ttl=66 time=0.333 ms
+64 bytes from 192.168.1.10: icmp_seq=2 ttl=66 time=0.400 ms
+64 bytes from 192.168.1.10: icmp_seq=3 ttl=66 time=0.429 ms
+64 bytes from 192.168.1.10: icmp_seq=4 ttl=66 time=0.457 ms
+64 bytes from 192.168.1.10: icmp_seq=5 ttl=66 time=0.346 ms
+64 bytes from 192.168.1.10: icmp_seq=6 ttl=66 time=0.267 ms
+^C
+--- 192.168.1.10 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5118ms
+rtt min/avg/max/mdev = 0.267/0.372/0.457/0.063 ms
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ ping 192.168.1.10[1P4.12.2
+[?2004lPING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
+64 bytes from 192.168.2.2: icmp_seq=1 ttl=64 time=0.954 ms
+64 bytes from 192.168.2.2: icmp_seq=2 ttl=64 time=0.908 ms
+64 bytes from 192.168.2.2: icmp_seq=3 ttl=64 time=1.01 ms
+64 bytes from 192.168.2.2: icmp_seq=4 ttl=64 time=1.11 ms
+64 bytes from 192.168.2.2: icmp_seq=5 ttl=64 time=0.818 ms
+64 bytes from 192.168.2.2: icmp_seq=6 ttl=64 time=0.921 ms
+64 bytes from 192.168.2.2: icmp_seq=7 ttl=64 time=0.948 ms
+64 bytes from 192.168.2.2: icmp_seq=8 ttl=64 time=0.826 ms
+64 bytes from 192.168.2.2: icmp_seq=9 ttl=64 time=1.04 ms
+64 bytes from 192.168.2.2: icmp_seq=10 ttl=64 time=0.908 ms
+64 bytes from 192.168.2.2: icmp_seq=11 ttl=64 time=0.868 ms
+^C
+--- 192.168.2.2 ping statistics ---
+11 packets transmitted, 11 received, 0% packet loss, time 10011ms
+rtt min/avg/max/mdev = 0.818/0.937/1.109/0.084 ms
+[?2004h]0;vagrant@office2server: ~[01;32mvagrant@office2server[00m:[01;34m~[00m$ [?2004l
+выход
+Connection to 192.168.121.15 closed.
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> exit
+exit
+
+Script done on 2024-10-04 13:28:12+03:00 [COMMAND_EXIT_CODE="0"]

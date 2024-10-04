@@ -12,10 +12,12 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.4.0',
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.1',
        :libvirt__netmask => '255.255.255.252',
        :libvirt__network_name => 'vagrant-libvirt-inet1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
       # :libvirt__mac => '52:54:00:33:c6:0b'
   inetrouter.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
@@ -45,10 +47,18 @@ Vagrant.configure("2") do |config|
       echo "$brd"
       apt update
       export DEBIAN_FRONTEND=noninteractive
-      apt install -y iptables
+      apt install -y iptables iptables-persistent traceroute
       iptables -t nat -A POSTROUTING ! -d 192.168.0.0/16 -o ens5 -j MASQUERADE
+      netfilter-persistent save
       echo "net.ipv4.conf.all.forwarding = 1" >> /etc/sysctl.conf
       sysctl -p
+      ip route add 192.168.1.4/30 via 192.168.1.2
+      ip route add 192.168.1.8/30 via 192.168.1.2
+      ip route add 192.168.2.0/24 via 192.168.1.2
+      ip route add 192.168.3.0/24 via 192.168.1.2
+      ip route add 192.168.4.0/24 via 192.168.1.2
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
 
@@ -56,40 +66,52 @@ Vagrant.configure("2") do |config|
   centralrouter.vm.box = "/home/max/vagrant/images/debian12"
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.1',
        :libvirt__netmask => '255.255.255.224',
        :libvirt__network_name => 'vagrant-libvirt-central1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.33',
        :libvirt__netmask => '255.255.255.224',
        :libvirt__network_name => 'vagrant-libvirt-central2',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.65',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-central3',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.2',
        :libvirt__netmask => '255.255.255.252',
        :libvirt__network_name => 'vagrant-libvirt-inet1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.5',
        :libvirt__netmask => '255.255.255.252',
        :libvirt__network_name => 'vagrant-libvirt-inet2',
-       :libvirt__always_destroy => 'false'  
+       :libvirt__always_destroy => false  
   centralrouter.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.9',
        :libvirt__netmask => '255.255.255.252',
        :libvirt__network_name => 'vagrant-libvirt-inet3',
-       :libvirt__always_destroy => 'false'  
+       :libvirt__always_destroy => false  
   centralrouter.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
       lvirt.cpus = "1"
@@ -118,9 +140,13 @@ Vagrant.configure("2") do |config|
       echo "$brd"
       apt update
       export DEBIAN_FRONTEND=noninteractive
-      apt install -y iptables
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.1.1
+      apt install -y iptables traceroute
+      ip route del default
+      ip route add default via 192.168.1.1
+      ip route add 192.168.3.0/24 via 192.168.1.6
+      ip route add 192.168.4.0/24 via 192.168.1.10
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       echo "net.ipv4.conf.all.forwarding = 1" >> /etc/sysctl.conf
       sysctl -p
       SHELL
@@ -129,10 +155,12 @@ Vagrant.configure("2") do |config|
   centralserver.vm.box = "/home/max/vagrant/images/debian12"
   centralserver.vm.network :private_network,
        :type => 'ip',
-       :ip => '192.168.0.2',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
+       :ip => '192.168.2.2',
        :libvirt__netmask => '255.255.255.224',
-       :libvirt__network_name => 'vagrant-libvirt-main1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__network_name => 'vagrant-libvirt-central1',
+       :libvirt__always_destroy => false
   centralserver.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
       lvirt.cpus = "1"
@@ -161,42 +189,55 @@ Vagrant.configure("2") do |config|
       echo "$brd"
       apt update
       export DEBIAN_FRONTEND=noninteractive
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.0.1
+      apt install -y traceroute
+      ip route del default
+      ip route add default via 192.168.2.1
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
   config.vm.define "Debian12-office1Router" do |office1router|
   office1router.vm.box = "/home/max/vagrant/images/debian12"
   office1router.vm.network :private_network,
-       :type => 'ip',   
-       :ip => '192.168.2.6',
+       :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
+       :ip => '192.168.1.6',
        :libvirt__netmask => '255.255.255.252',
-       :libvirt__network_name => 'vagrant-libvirt-central1',
-       :libvirt__always_destroy => 'false'  
+       :libvirt__network_name => 'vagrant-libvirt-inet2',
+       :libvirt__always_destroy => false  
   office1router.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.1',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office1-1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.65',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office1-2',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.129',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office1-3',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.193',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office1-4',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office1router.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
       lvirt.cpus = "1"  
@@ -224,39 +265,50 @@ Vagrant.configure("2") do |config|
       echo 'Если ранее не были установлены, то установим необходимые  пакеты'
       echo "$brd"
       apt update
+      apt install -y traceroute
       export DEBIAN_FRONTEND=noninteractive
       echo "net.ipv4.conf.all.forwarding = 1" >> /etc/sysctl.conf
       sysctl -p
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.2.5
+      ip route del default
+      ip route add default via 192.168.1.5
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
   config.vm.define "Debian12-office2Router" do |office2router|
   office2router.vm.box = "/home/max/vagrant/images/debian12"
   office2router.vm.network :private_network,
        :type => 'ip',
-       :ip => '192.168.2.10',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
+       :ip => '192.168.1.10',
        :libvirt__netmask => '255.255.255.252',
-       :libvirt__network_name => 'vagrant-libvirt-central2',
-       :libvirt__always_destroy => 'false'
+       :libvirt__network_name => 'vagrant-libvirt-inet3',
+       :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.1',
        :libvirt__netmask => '255.255.255.128',
        :libvirt__network_name => 'vagrant-libvirt-office2-1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.129',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office2-2',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.193',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office2-3',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
   office2router.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
       lvirt.cpus = "1"
@@ -284,11 +336,14 @@ Vagrant.configure("2") do |config|
       echo 'Если ранее не были установлены, то установим необходимые  пакеты'
       echo "$brd"
       apt update
+      apt install -y traceroute
       export DEBIAN_FRONTEND=noninteractive
       echo "net.ipv4.conf.all.forwarding = 1" >> /etc/sysctl.conf
       sysctl -p
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.2.9
+      ip route del default
+      ip route add default via 192.168.1.9
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
   config.vm.define "Debian12-office1Server" do |office1server|
@@ -297,10 +352,12 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.1.0',
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.130',
        :libvirt__netmask => '255.255.255.192',
        :libvirt__network_name => 'vagrant-libvirt-office1-3',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
       # :libvirt__mac => '52:54:00:33:c6:0b'
   office1server.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
@@ -330,8 +387,11 @@ Vagrant.configure("2") do |config|
       echo "$brd"
       apt update
       export DEBIAN_FRONTEND=noninteractive
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.3.129
+      apt install -y traceroute
+      ip route del default
+      ip route add default via 192.168.3.129
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
   config.vm.define "Debian12-office2Server" do |office2server|
@@ -340,10 +400,12 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.1.0',
        :type => 'ip',
+       :libvirt__forward_mode => 'none',
+       :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.2',
        :libvirt__netmask => '255.255.255.128',
        :libvirt__network_name => 'vagrant-libvirt-office2-1',
-       :libvirt__always_destroy => 'false'
+       :libvirt__always_destroy => false
       # :libvirt__mac => '52:54:00:33:c6:0b'
   office2server.vm.provider "libvirt" do |lvirt|
       lvirt.memory = "1024"
@@ -359,7 +421,7 @@ Vagrant.configure("2") do |config|
   office2server.vm.provision "shell", inline: <<-SHELL
       brd='*************************************************************'
       echo "$brd"
-      echo 'Set Hostname'
+      echo 'Set Hostname'		
       hostnamectl set-hostname office2server
       echo "$brd"
       sed -i 's/debian12/office2server/' /etc/hosts
@@ -373,8 +435,11 @@ Vagrant.configure("2") do |config|
       echo "$brd"
       apt update
       export DEBIAN_FRONTEND=noninteractive
-      ip route del 0.0.0.0/0
-      ip route add 0.0.0.0/0 via 192.168.4.1
+      apt install -y traceroute
+      ip route del default
+      ip route add default via 192.168.4.1
+      ip route save > /etc/my-routes
+      echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
       SHELL
   end
 end

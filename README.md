@@ -367,3 +367,40 @@ PING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.758/0.917/1.048/0.090 ms
 ```
 Здесь так же, первый запуск команды происходит с задержкой и потерей пакетов - `13 packets transmitted, 7 received, 46.1538% packet loss`, во второй раз видим `6 packets transmitted, 6 received, 0% packet loss`.
+
+#### Сохранение правил фильтрации и маршрутов
+
+Добавленные нами правило для _Iptables_ и маршруты (как по умолчанию, так и статические) сохранятся до первой перезагрузки сервера или перезапуска сетевих интерфейсов. Следующие шаги позволят сохранить выполненные настройки.
+
+##### Правила Iptables
+
+Для сохранения правил _Iptables_ воспользуемся пакетом _nftables-persistent_. За его установку и сохранения загруженного правила отвечает следующий блок файла _Vagrantfile_ в секции _inetRouter_:
+```
+apt install -y iptables iptables-persistent traceroute
+iptables -t nat -A POSTROUTING ! -d 192.168.0.0/16 -o ens5 -j MASQUERADE
+netfilter-persistent save
+```
+ 
+##### Сохранение маршрутов
+
+Изменённые или добавленные маршруты сохраним с помощью команды `ip route save > /etc/my-routes` в _Vagrantfile_, а актиывацию - с помощью строки `up ip route restore < /etc/my-routes`, помещённой в файл _/etc/network/interfaces_ 
+для каждой виртуальной машины. 
+Пример соответствующего блока настроек в _Vagrantfile_:
+```
+ip route add 192.168.1.4/30 via 192.168.1.2
+ip route add 192.168.1.8/30 via 192.168.1.2
+ip route add 192.168.2.0/24 via 192.168.1.2
+ip route add 192.168.3.0/24 via 192.168.1.2
+ip route add 192.168.4.0/24 via 192.168.1.2
+ip route save > /etc/my-routes
+echo 'up ip route restore < /etc/my-routes' >> /etc/network/interfaces
+```
+> [!NOTE]
+> К данной работе прилагаю также запись консоли. Для того, чтобы воспроизвести выполненные действия,
+> необходимо скачать файлы [screenrecord-2024-10-04.script](screenrecord-2024-10-04.script) и [screenrecord-2024-10-04.time](screenrecord-2024-10-04.time),
+> после чего выполнить в каталоге с загруженными файлами команду:
+
+```
+scriptreplay ./screenrecord-2024-10-04.time ./screenrecord-2024-10-04.script
+```
+Спасибо за прочтение! :potted_plant:
