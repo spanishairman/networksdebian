@@ -112,6 +112,7 @@ virsh net-list
 Немного изменим схему:
 ![Схема](MyNetworks.drawio2.png)
 Здесь у сетей _vagrant-libvirt-central_, _vagrant-libvirt-inet_, _vagrant-libvirt-office1_ и _vagrant-libvirt-office2_ появились числовые индексы и сами сети стали меньше по маске.
+
 Пример файла для описания сети [vagrant-libvirt-central1](files/vagrant-libvirt-central1.xml):
 ```
 <network connections='2' ipv6='no'>
@@ -219,3 +220,150 @@ ip route add default via 192.168.1.1
 ip route add 192.168.3.0/24 via 192.168.1.6
 ip route add 192.168.4.0/24 via 192.168.1.10
 ```
+Проверим, как работают созданные статические маршруты, залогинимся по _ssh_ на сервере _inetRouter_ и проверим таблицу маршрутизации:
+```
+max@localhost:~/vagrant/vg3> vagrant ssh Debian12-inetRouter 
+==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.
+Linux inetrouter 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Sep 30 11:45:32 2024
+vagrant@inetrouter:~$ ip route 
+default via 192.168.121.1 dev ens5 
+192.168.1.0/30 dev ens6 proto kernel scope link src 192.168.1.1 
+192.168.1.4/30 via 192.168.1.2 dev ens6 
+192.168.1.8/30 via 192.168.1.2 dev ens6 
+192.168.2.0/24 via 192.168.1.2 dev ens6 
+192.168.3.0/24 via 192.168.1.2 dev ens6 
+192.168.4.0/24 via 192.168.1.2 dev ens6 
+192.168.121.0/24 dev ens5 proto kernel scope link src 192.168.121.10
+```
+Запустим пинг последовательно на хосты _centralRouter_, _office1Router_ и _office1Server_:
+```
+vagrant@inetrouter:~$ ping 192.168.1.2
+PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
+64 bytes from 192.168.1.2: icmp_seq=7 ttl=66 time=0.422 ms
+64 bytes from 192.168.1.2: icmp_seq=8 ttl=66 time=0.380 ms
+64 bytes from 192.168.1.2: icmp_seq=9 ttl=66 time=0.412 ms
+64 bytes from 192.168.1.2: icmp_seq=10 ttl=66 time=0.293 ms
+64 bytes from 192.168.1.2: icmp_seq=11 ttl=66 time=0.349 ms
+^C
+--- 192.168.1.2 ping statistics ---
+11 packets transmitted, 5 received, 54.5455% packet loss, time 10233ms
+rtt min/avg/max/mdev = 0.293/0.371/0.422/0.046 ms
+vagrant@inetrouter:~$ ping 192.168.1.5
+PING 192.168.1.5 (192.168.1.5) 56(84) bytes of data.
+64 bytes from 192.168.1.5: icmp_seq=1 ttl=66 time=0.307 ms
+64 bytes from 192.168.1.5: icmp_seq=2 ttl=66 time=0.349 ms
+64 bytes from 192.168.1.5: icmp_seq=3 ttl=66 time=0.350 ms
+^C
+--- 192.168.1.5 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2029ms
+rtt min/avg/max/mdev = 0.307/0.335/0.350/0.020 ms
+vagrant@inetrouter:~$ ping 192.168.3.130
+PING 192.168.3.130 (192.168.3.130) 56(84) bytes of data.
+64 bytes from 192.168.3.130: icmp_seq=6 ttl=64 time=0.868 ms
+64 bytes from 192.168.3.130: icmp_seq=38 ttl=64 time=0.950 ms
+64 bytes from 192.168.3.130: icmp_seq=39 ttl=64 time=0.865 ms
+64 bytes from 192.168.3.130: icmp_seq=40 ttl=64 time=1.04 ms
+64 bytes from 192.168.3.130: icmp_seq=41 ttl=64 time=0.922 ms
+64 bytes from 192.168.3.130: icmp_seq=42 ttl=64 time=0.913 ms
+^C
+--- 192.168.3.130 ping statistics ---
+42 packets transmitted, 6 received, 85.7143% packet loss, time 41875ms
+rtt min/avg/max/mdev = 0.865/0.926/1.042/0.059 ms
+vagrant@inetrouter:~$ ping 192.168.4.2
+PING 192.168.4.2 (192.168.4.2) 56(84) bytes of data.
+64 bytes from 192.168.4.2: icmp_seq=6 ttl=64 time=1.11 ms
+64 bytes from 192.168.4.2: icmp_seq=7 ttl=64 time=1.03 ms
+64 bytes from 192.168.4.2: icmp_seq=8 ttl=64 time=0.833 ms
+64 bytes from 192.168.4.2: icmp_seq=9 ttl=64 time=0.825 ms
+64 bytes from 192.168.4.2: icmp_seq=10 ttl=64 time=0.899 ms
+64 bytes from 192.168.4.2: icmp_seq=11 ttl=64 time=0.869 ms
+64 bytes from 192.168.4.2: icmp_seq=12 ttl=64 time=1.36 ms
+^C
+--- 192.168.4.2 ping statistics ---
+12 packets transmitted, 7 received, 41.6667% packet loss, time 11151ms
+rtt min/avg/max/mdev = 0.825/0.990/1.363/0.181 ms
+```
+Мы видим, что при запуске команды _ping_ происходит потеря пакетов. Это вызвано тем, что для взаимодействия с соседними узлами сети, хосту необходимо узнать их машинные адреса и построить _arp_-таблицу, связывающую _ip_-адреса хостов с их машинными адресами. 
+В дальнейшем обращене к этим хостам происходит без задержек.
+
+Пример _arp_-таблиц на _inetRouter_ и _centralRouter_ после выполнения пинга:
+```
+root@inetrouter:~# cat /proc/net/arp 
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.121.1    0x1         0x2         52:54:00:43:65:2b     *        ens5
+192.168.1.2      0x1         0x2         52:54:00:35:17:68     *        ens6
+
+root@centralrouter:~# cat /proc/net/arp 
+IP address       HW type     Flags       HW address            Mask     Device
+192.168.1.6      0x1         0x2         52:54:00:47:29:a0     *        ens10
+192.168.2.2      0x1         0x2         52:54:00:6f:9f:a8     *        ens6
+192.168.121.1    0x1         0x2         52:54:00:43:65:2b     *        ens5
+192.168.1.10     0x1         0x2         52:54:00:ce:1c:0d     *        ens11
+192.168.1.1      0x1         0x2         52:54:00:af:64:e8     *        ens9
+```
+Проверим, что повторный запуск пинга происходит без задержек и потерь пакетов. Запустим _ping_ узла _office2Server_ с _inetRouter_:
+```
+max@localhost:~/vagrant/vg3> vagrant ssh Debian12-inetRouter 
+==> Debian12-inetRouter: You assigned a static IP ending in ".1" to this machine.
+==> Debian12-inetRouter: This is very often used by the router and can cause the
+==> Debian12-inetRouter: network to not work properly. If the network doesn't work
+==> Debian12-inetRouter: properly, try changing this IP.
+^[[ALinux inetrouter 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Oct  4 10:57:23 2024 from 192.168.121.1
+vagrant@inetrouter:~$ ping 192.168.4.2
+PING 192.168.4.2 (192.168.4.2) 56(84) bytes of data.
+64 bytes from 192.168.4.2: icmp_seq=1 ttl=64 time=0.857 ms
+64 bytes from 192.168.4.2: icmp_seq=2 ttl=64 time=0.939 ms
+64 bytes from 192.168.4.2: icmp_seq=3 ttl=64 time=0.835 ms
+^C
+--- 192.168.4.2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 0.835/0.877/0.939/0.044 ms
+```
+Сделаем тоже самое для сервера _office2Server_, запустим с него пинг сервера _centralServer_:
+```
+vagrant@office2server:~$ ping 192.168.2.2
+PING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
+64 bytes from 192.168.2.2: icmp_seq=7 ttl=64 time=1.07 ms
+64 bytes from 192.168.2.2: icmp_seq=8 ttl=64 time=0.832 ms
+64 bytes from 192.168.2.2: icmp_seq=9 ttl=64 time=0.893 ms
+64 bytes from 192.168.2.2: icmp_seq=10 ttl=64 time=0.893 ms
+64 bytes from 192.168.2.2: icmp_seq=11 ttl=64 time=0.877 ms
+64 bytes from 192.168.2.2: icmp_seq=12 ttl=64 time=0.914 ms
+64 bytes from 192.168.2.2: icmp_seq=13 ttl=64 time=1.01 ms
+^C
+--- 192.168.2.2 ping statistics ---
+13 packets transmitted, 7 received, 46.1538% packet loss, time 12149ms
+rtt min/avg/max/mdev = 0.832/0.926/1.067/0.075 ms
+vagrant@office2server:~$ ping 192.168.2.2
+PING 192.168.2.2 (192.168.2.2) 56(84) bytes of data.
+64 bytes from 192.168.2.2: icmp_seq=1 ttl=64 time=0.758 ms
+64 bytes from 192.168.2.2: icmp_seq=2 ttl=64 time=0.925 ms
+64 bytes from 192.168.2.2: icmp_seq=3 ttl=64 time=0.872 ms
+64 bytes from 192.168.2.2: icmp_seq=4 ttl=64 time=0.983 ms
+64 bytes from 192.168.2.2: icmp_seq=5 ttl=64 time=0.919 ms
+64 bytes from 192.168.2.2: icmp_seq=6 ttl=64 time=1.05 ms
+^C
+--- 192.168.2.2 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5007ms
+rtt min/avg/max/mdev = 0.758/0.917/1.048/0.090 ms
+```
+Здесь так же, первый запуск команды происходит с задержкой и потерей пакетов - `13 packets transmitted, 7 received, 46.1538% packet loss`, во второй раз видим `6 packets transmitted, 6 received, 0% packet loss`.
