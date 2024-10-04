@@ -132,4 +132,26 @@ apt install -y iptables
 ip route del 0.0.0.0/0
 ip route add 0.0.0.0/0 via 192.168.1.1
 ```
+Или так:
+```
+ip route del default
+ip route add default via 192.168.1.1
+```
+
 Все вышеуказанные примеры содержатся в прилагаемом _Vagrantfile_.
+
+Для _inetRouter_ не требуется изменять маршрут по умолчанию, но необходимо добавить маршруты до сетей, находящихся за _centralRouter_:
+```
+ip route add 192.168.1.4/30 via 192.168.1.2
+ip route add 192.168.1.8/30 via 192.168.1.2
+ip route add 192.168.2.0/24 via 192.168.1.2
+ip route add 192.168.3.0/24 via 192.168.1.2
+ip route add 192.168.4.0/24 via 192.168.1.2
+```
+Для centralRouter, как и для всех остальных хостов, кроме _inetRouter_ потребуется изменить маршрут по умолчанию. Также  для него нужно прописать маршруты до сетей, находящихся за _office1Router_и _office2Router_:
+```
+ip route del default
+ip route add default via 192.168.1.1
+ip route add 192.168.3.0/24 via 192.168.1.6
+ip route add 192.168.4.0/24 via 192.168.1.10
+```
