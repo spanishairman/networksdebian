@@ -213,7 +213,7 @@ ip route add 192.168.2.0/24 via 192.168.1.2
 ip route add 192.168.3.0/24 via 192.168.1.2
 ip route add 192.168.4.0/24 via 192.168.1.2
 ```
-Для centralRouter, как и для всех остальных хостов, кроме _inetRouter_ потребуется изменить маршрут по умолчанию. Также  для него нужно прописать маршруты до сетей, находящихся за _office1Router_и _office2Router_:
+Для centralRouter, как и для всех остальных хостов, кроме _inetRouter_ потребуется изменить маршрут по умолчанию. Также  для него нужно прописать маршруты до сетей, находящихся за _office1Router_ и _office2Router_:
 ```
 ip route del default
 ip route add default via 192.168.1.1
