@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.4.0',
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.1',
        :libvirt__netmask => '255.255.255.252',
@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
   centralrouter.vm.box = "/home/max/vagrant/images/debian12"
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.1',
        :libvirt__netmask => '255.255.255.224',
@@ -74,7 +74,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.33',
        :libvirt__netmask => '255.255.255.224',
@@ -82,7 +82,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.65',
        :libvirt__netmask => '255.255.255.192',
@@ -90,7 +90,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.2',
        :libvirt__netmask => '255.255.255.252',
@@ -98,7 +98,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.5',
        :libvirt__netmask => '255.255.255.252',
@@ -106,7 +106,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false  
   centralrouter.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.9',
        :libvirt__netmask => '255.255.255.252',
@@ -155,7 +155,7 @@ Vagrant.configure("2") do |config|
   centralserver.vm.box = "/home/max/vagrant/images/debian12"
   centralserver.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.2.2',
        :libvirt__netmask => '255.255.255.224',
@@ -200,7 +200,7 @@ Vagrant.configure("2") do |config|
   office1router.vm.box = "/home/max/vagrant/images/debian12"
   office1router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.6',
        :libvirt__netmask => '255.255.255.252',
@@ -208,7 +208,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false  
   office1router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.1',
        :libvirt__netmask => '255.255.255.192',
@@ -216,7 +216,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.65',
        :libvirt__netmask => '255.255.255.192',
@@ -224,7 +224,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.129',
        :libvirt__netmask => '255.255.255.192',
@@ -232,7 +232,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office1router.vm.network :private_network,
        :type => 'ip', 
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.193',
        :libvirt__netmask => '255.255.255.192',
@@ -279,7 +279,7 @@ Vagrant.configure("2") do |config|
   office2router.vm.box = "/home/max/vagrant/images/debian12"
   office2router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.1.10',
        :libvirt__netmask => '255.255.255.252',
@@ -287,7 +287,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.1',
        :libvirt__netmask => '255.255.255.128',
@@ -295,7 +295,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.129',
        :libvirt__netmask => '255.255.255.192',
@@ -303,7 +303,7 @@ Vagrant.configure("2") do |config|
        :libvirt__always_destroy => false
   office2router.vm.network :private_network,
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.193',
        :libvirt__netmask => '255.255.255.192',
@@ -352,7 +352,7 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.1.0',
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.3.130',
        :libvirt__netmask => '255.255.255.192',
@@ -400,7 +400,7 @@ Vagrant.configure("2") do |config|
       # :type => 'dhcp',
       # :libvirt__network_address => '192.168.1.0',
        :type => 'ip',
-       :libvirt__forward_mode => 'none',
+       :libvirt__forward_mode => 'veryisolated',
        :libvirt__dhcp_enabled => false,
        :ip => '192.168.4.2',
        :libvirt__netmask => '255.255.255.128',
